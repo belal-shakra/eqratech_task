@@ -1,21 +1,15 @@
 import "./App.css";
-import GuestLayout from "./components/layouts/GuestLayout";
-import AuthLayout from "./components/layouts/AuthLayout";
+import Layout from "./components/layouts/GuestLayout";
 import Login from "./components/guest/Login";
 import Register from "./components/guest/Register";
 import Profile from "./components/auth/profile/Profile";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AuthLayout from "./components/layouts/AuthLayout";
 
 function App() {
   return (
     <>
-      {/* <GuestLayout>
-        <Login title="Login" />
-        <Register title="Register" />
-      </GuestLayout> */}
 
-      <AuthLayout>
-        <Profile />
-      </AuthLayout>
     </>
   );
 }

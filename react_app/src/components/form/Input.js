@@ -1,6 +1,6 @@
 
 
-const Input = ({type, classes, name, id = "", value = "", placeholder = ""}) =>{
+const Input = ({type, classes, name, id = "", value = "", placeholder = "", event = null}) =>{
   
   return(
     <input
@@ -10,6 +10,7 @@ const Input = ({type, classes, name, id = "", value = "", placeholder = ""}) =>{
       id={id}
       value={value}
       placeholder={placeholder}
+      onChange={event}
     />
   );
 }

@@ -3,6 +3,8 @@ import TabContent from "./TabContent";
 import InputWrapper from "../../form/InputWrapper";
 import Input from "../../form/Input";
 import Label from "../../form/Label";
+import { post } from "../../../services/Api";
+import { Navigate } from "react-router-dom";
 
 
 const UpdateInfo = ()=>{
@@ -12,7 +14,21 @@ const UpdateInfo = ()=>{
   <section>
     <div class="my-4">
 
-      <h2 class="my-4">Update Your Info</h2>
+      <h2 class="my-4">
+        Update Your Info
+        <span className="mx-4 text-primary text-decoration-underline" style={{fontSize: "20px", cursor: "pointer"}}
+        onClick={()=>{
+          post('logout', [])
+          .then((e)=>{
+            localStorage.removeItem("ACCESS_TOKEN");
+            localStorage.removeItem("USER");
+            <Navigate to="login" />
+          });
+        }}
+        >
+          (logout)
+        </span>
+      </h2>
 
       <ul
         className="nav nav-tabs border-bottom border-1 border-dark"
@@ -76,9 +92,7 @@ const UpdateInfo = ()=>{
         </TabContent>
 
 
-
         <TabContent name="Skills">
-
           <InputWrapper>
             <Input type="text" name="skill" classes="form-control border border-dark border-1 d-inline-block w-75 me-1" placeholder="Add Skill"/>
             <Input type="submit" name="" classes={"btn btn-primary"} value="Add"/>

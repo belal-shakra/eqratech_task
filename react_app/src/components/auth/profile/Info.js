@@ -3,7 +3,7 @@ const Info = ()=>{
 
   return(
     <section>
-      <div className="d-flex border border-1 border-dark rounded bg-white p-4">
+      <div className="d-flex border border-1 border-dark rounded bg-white p-4 shadow-lg">
         <div id="user-img" className="border border-1 border-dark rounded mx-3">
           <img src="https://via.placeholder.com/200/000" alt="" />
         </div>

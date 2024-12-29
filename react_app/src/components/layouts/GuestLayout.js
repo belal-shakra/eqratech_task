@@ -1,13 +1,25 @@
+import { Outlet } from "react-router-dom";
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useStateContext } from "../../contexts/ContextProvider";
 
-const GuestLayout = ({children})=>{
+
+const Layout = ({children})=>{
+
+
+  const {user, token, setUser, setToken} = useStateContext();
+
+  if (token){
+    return <Navigate to="/" />
+  }
+
 
   return(
     <div className="d-flex justify-content-center my-5">
       <div className="border border-1 border-dark rounded p-3 bg-white shadow-lg">
-        {children}
+        <Outlet />
       </div>
     </div>
   );
 }
 
-export default GuestLayout;
+export default Layout;
